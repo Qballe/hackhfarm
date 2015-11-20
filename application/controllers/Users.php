@@ -27,7 +27,7 @@ class Users extends CI_Controller {
     }
 
     public function details($id) {
-        $user=$this->Users_modelgetById($id);
+        $user=$this->Users_model->getById($id);
         $this->load->view('users_details', $user);
     }
 }

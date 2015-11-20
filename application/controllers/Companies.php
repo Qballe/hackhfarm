@@ -15,8 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Companies extends CI_Controller{
 
-    public function index()
-	{
+    public function index() {
                 
                 $companies= array();
                 
@@ -44,6 +43,10 @@ class Companies extends CI_Controller{
                 
                 
 	}
+    public function details($id) {
+        $company=$this->Company_model->getById($id);
+        $this->load->view('companies_details', $company);
+    }
     
     
     
