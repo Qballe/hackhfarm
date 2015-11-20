@@ -149,11 +149,13 @@ content: url('../img/icons/casetta.png');
 }
 
 .searchbar_hfarm{
-    background: transparent;
     border-left: none;
     border-right: none;
     border-top: none;
     color:white;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
 }
 
 .home_title{
