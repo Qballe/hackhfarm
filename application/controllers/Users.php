@@ -26,7 +26,7 @@ class Users extends CI_Controller {
 
     }
 
-    public function showDetails($id) {
+    public function details($id) {
         $user=$this->Users_modelgetById($id);
         $this->load->view('users_details', $user);
     }
