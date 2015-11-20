@@ -2,7 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Search extends CI_Controller {
-	public function index() {
-		$this->load->view('welcome_message');
+
+	public function __construct() {
+		parent::__construct();
+		$this->load->database();
+		$this->load->library(array('form_validation'));
+		$this->load->helper(array('url','language'));
+	}
+
+	public function companies($term = '') {
+
+	}
+
+	public function do($term = '') {
+
+		//$this->load->view('welcome_message');
 	}
 }
