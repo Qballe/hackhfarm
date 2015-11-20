@@ -6,15 +6,10 @@ class Notification extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->library(array('form_validation'));
-		$this->load->helper(array('url','language'));
+		$this->load->helper(array('url', 'language'));
 	}
 
-	public function companies($term = '') {
+	public function notify($term = '') {
 
-	}
-
-	public function do($term = '') {
-
-		//$this->load->view('welcome_message');
 	}
 }

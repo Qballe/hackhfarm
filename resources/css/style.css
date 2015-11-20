@@ -70,7 +70,7 @@ font-size: 2em;
   width: 100%;
 } 
 
-button.btn-danger{
+a.btn-danger{
     /*
     margin: 0;
     padding:0;
@@ -115,6 +115,7 @@ button.btn-danger{
 }
 
 .white_background{
+    margin-top: 40px;
     background-image:none;
     background-color: #FFF;
 }
@@ -125,4 +126,33 @@ button.btn-danger{
 
 .email{
     color: #343434;
+}
+
+
+.team_members, .location{
+    font-weight: bold;
+    font-size: 15pt;
+    margin-left: 10px;
+}
+
+.team_members:before {
+content: url('../img/icons/group.png');
+}
+
+.location:before {
+content: url('../img/icons/casetta.png');
+}
+
+
+.hfarm-white-link:after {
+    content: url('../img/icons/person_login.png');
+    z-index: 1000;
+}
+
+.searchbar_hfarm{
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color:white;
 }

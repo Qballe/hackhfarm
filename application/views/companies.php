@@ -1,7 +1,10 @@
+    <form role="form">
+            <div class="form-group">
+                <input class="form-control searchbar_hfarm" id="inputdefault" type="text" placeholder="search by company name" border="none">
+            </div>
+        </form>
     <div id="wrap"  class="white_background">
-        <div id="main" class="container clear-top">
-            <p>I'm companies.php</p>
-            
+        <div id="main" class="container clear-top">            
             <ul class="all-blogs">
                 <?php 
                 foreach ($companies as $company){ ?>
@@ -21,9 +24,5 @@
                 </li>
                 <?php } ?>
             </ul>
-            
-            
-            
-            
         </div>
     </div>
