@@ -1,1 +1,1 @@
-<a href="#" class="hfarm-white-link pull-right">MENU</a>
+<a href="#" class="hfarm-white-link pull-right">LOGIN</a>
