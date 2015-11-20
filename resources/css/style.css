@@ -126,3 +126,18 @@ button.btn-danger{
 .email{
     color: #343434;
 }
+
+
+.team_members, .location{
+    font-weight: bold;
+    font-size: 15pt;
+    margin-left: 10px;
+}
+
+.team_members:before {
+content: url('../img/icons/group.png');
+}
+
+.location:before {
+content: url('../img/icons/casetta.png');
+}
