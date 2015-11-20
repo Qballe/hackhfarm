@@ -11,7 +11,7 @@
 require 'recipe/codeigniter.php';
 
 // Your production server
-server('prod', 'ftp.hteam.altervista.org', 21)
+server('prod', '148.251.76.111', 21)
     ->user('hteam')
     ->password('bucvukuggi65')
     ->forwardAgent()

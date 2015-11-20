@@ -1,0 +1,31 @@
+➤ Executing task deploy:prepare
+[k[1A➤
+⤷ on [prod]
+
+Notice: Cannot connect to ftp.hteam.altervista.org:22. Error 61. Connection refused in /Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/phpseclib/phpseclib/phpseclib/Net/SSH2.php on line 1011
+
+
+[37;41m                                                  [39;49m
+[37;41m  [RuntimeException]                              [39;49m
+[37;41m  Unable to login with the provided credentials.  [39;49m
+[37;41m                                                  [39;49m
+
+
+[33mException trace:[39m
+ () at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/src/Server/Remote/PhpSecLib.php:89[39m
+ Deployer\Server\Remote\PhpSecLib->connect() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/recipe/common.php:71[39m
+ {closure}() at [32mn/a:n/a[39m
+ call_user_func() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/src/Task/Task.php:73[39m
+ Deployer\Task\Task->run() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/src/Executor/SeriesExecutor.php:39[39m
+ Deployer\Executor\SeriesExecutor->run() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/src/Console/TaskCommand.php:82[39m
+ Deployer\Console\TaskCommand->execute() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/symfony/console/Command/Command.php:256[39m
+ Symfony\Component\Console\Command\Command->run() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/symfony/console/Application.php:838[39m
+ Symfony\Component\Console\Application->doRunCommand() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/symfony/console/Application.php:189[39m
+ Symfony\Component\Console\Application->doRun() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/symfony/console/Application.php:120[39m
+ Symfony\Component\Console\Application->run() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/src/Deployer.php:99[39m
+ Deployer\Deployer->run() at [32m/Users/alexzanardo/Documents/H-Farm/Hackatons/H-ACK H-Farm/code/vendor/deployer/deployer/bin/dep:63[39m
+
+
+[32mdeploy [-p|--parallel][39m
+
+
