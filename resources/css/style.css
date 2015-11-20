@@ -156,3 +156,9 @@ content: url('../img/icons/casetta.png');
     border-top: none;
     color:white;
 }
+
+.home_title{
+    color:#e31e30;
+    font-size: 10em;
+    text-align:center;
+}

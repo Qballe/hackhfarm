@@ -52,9 +52,9 @@ class Users_model extends CI_Model {
         foreach ($result1 as $row)
         {
             $id=$row->id;
-            $query2=$this->db->get_where('users_details', array('user' => $id));
+            $query2=$this->db->get_where('users_details', array('user_id' => $id));
             $result2=$query2->row_array();
-            array_push($result, array_merge($row, $result2) );
+            array_push($result, array_merge((array)$row, $result2) );
         }
         return $result;
     }

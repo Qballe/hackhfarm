@@ -24,7 +24,7 @@ class Welcome extends CI_Controller {
                 //$data['title'] = ucfirst($page); // Capitalize the first letter
                 $data['first_button_text'] = "Companies";
                 $data['second_button_text'] = "People";
-                $data['title'] = "Home Page";
+                $data['title'] = " ";
                 $this->load->view('templates/topbar');
                 $this->load->view('templates/header',$data);
                 $this->load->view('home_page');

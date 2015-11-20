@@ -14,7 +14,7 @@ class Users extends CI_Controller {
 
     public function index() {
         $users=$this->Users_model->read();
-
+        $data['users']=$users;
         $data['first_button_text'] = "List view";
         $data['second_button_text'] = "Map view";
         $data['title']="Users";
