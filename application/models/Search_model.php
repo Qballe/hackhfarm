@@ -42,10 +42,10 @@ class Search_model extends CI_Model {
 	}
 
 	public function all($terms){
-		return [
+		return array(
 			'companies' => $this->by_company($terms),
 			'people' => $this->by_user($terms),
 			'skills' => $this->by_skill($terms),
-		];
+		);
 	}
 }

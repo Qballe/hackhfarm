@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 20/11/15
- * Time: 12.25
- */
-
 class People_model extends CI_Model {
-
     public function __construct()
     {
         parent::__construct();
