@@ -80,7 +80,7 @@ class Users_model extends CI_Model {
         $result1=$query1->row_array();
         $id=$result1['id'];
 
-        $this->db->where('user', $id);
+        $this->db->where('user_id', $id);
         $this->db->update('users_details', $data);
         return true;
     }
@@ -93,7 +93,7 @@ class Users_model extends CI_Model {
         $result1=$query1->row_array();
         $id=$result1['id'];
 
-        $this->db->delete('users_details', array('user' => $id));
+        $this->db->delete('users_details', array('user_id' => $id));
         $this->db->delete('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
         return true;
     }
@@ -105,7 +105,7 @@ class Users_model extends CI_Model {
         $query1 = $this->db->get_where('users', array('id' => $id));
         $result1=$query1->row_array();
 
-        $query2=$this->db->get_where('users_details', array('user' => $id));
+        $query2=$this->db->get_where('users_details', array('user_id' => $id));
         $result2=$query2->row_array();
 
         return array_merge($result1, $result2);

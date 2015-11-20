@@ -27,9 +27,6 @@ class Companies_model extends CI_Model {
     }
 
     public function read() {
-        if (!isset($name) ) {
-            return false;
-        }
         $query = $this->db->get('companies');
         return $query->result();
     }
