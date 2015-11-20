@@ -60,4 +60,13 @@ class Companies_model extends CI_Model {
         $this->db->delete('companies', array('name' => $name));
         return true;
     }
+
+    public function getById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $query = $this->db->get_where('companies', array('id' => $id));
+        $result=$query->row_array();
+        return $result;
+    }
 }
