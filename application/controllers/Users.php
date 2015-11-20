@@ -13,7 +13,7 @@ class Users extends CI_Controller {
     }
 
     public function index() {
-        $users=array();
+        $users=$this->Users_model->read();
 
         $data['first_button_text'] = "List view";
         $data['second_button_text'] = "Map view";
@@ -26,6 +26,8 @@ class Users extends CI_Controller {
 
     }
 
-    public function view() {
+    public function showDetails($id) {
+        $user=$this->Users_modelgetById($id);
+        $this->load->view('users_details', $user);
     }
 }

@@ -34,12 +34,12 @@ class Companies_model extends CI_Model {
         return true;
     }
 
-    public function read($name) {
+    public function read() {
         if (!isset($name) ) {
             return false;
         }
-        $query = $this->db->get_where('companies', array('name' => $name));
-        return $query->row_array();
+        $query = $this->db->get('companies');
+        return $query->result();
     }
 
     public function update($name, $newEmail, $newDescription, $newContacts){
