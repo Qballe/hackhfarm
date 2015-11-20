@@ -146,7 +146,6 @@ content: url('../img/icons/casetta.png');
 
 .hfarm-white-link:after {
     content: url('../img/icons/person_login.png');
-    z-index: 1000;
 }
 
 .searchbar_hfarm{
@@ -159,6 +158,13 @@ content: url('../img/icons/casetta.png');
 
 .home_title{
     color:#e31e30;
-    font-size: 10em;
+    font-size: 18em;
     text-align:center;
+}
+
+.home_subtitle{
+    color:#fff;;
+    font-size: 6em;
+    text-align:center;
+    font-weight: lighter;
 }
