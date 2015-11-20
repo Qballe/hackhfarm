@@ -19,21 +19,29 @@ class People_model extends CI_Model {
             return false;
         }
 
-        $data=array(
-            'name' => $name,
-            'lastname' => $lastname,
+        $data1=array(
+            'first_name' => $name,
+            'last_name' => $lastname,
             'email' => $email
         );
+        $data2=array();
         if (isset($description)) {
-            $data['description']=$description;
+            $data2['description']=$description;
         }
         if (isset($contacts)) {
-            $data['contacts']=$contacts;
+            $data2['contacts']=$contacts;
         }
         if (isset($role)) {
-            $data['role']=$role;
+            $data2['role']=$role;
         }
-        $this->db->insert('people', $data);
+        $this->db->insert('users', $data1);
+        $query1 = $this->db->get_where('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
+        $result1=$query1->row_array();
+        $id=$result1['id'];
+
+        $data2['user']=$id;
+
+        $this->db->insert('users_details', $data2);
         return true;
     }
 
@@ -41,8 +49,13 @@ class People_model extends CI_Model {
         if (!isset($name) || !isset($lastname) || !isset($email)) {
             return false;
         }
-        $query = $this->db->get_where('people', array('name' => $name, 'lastname' => $lastname, 'email' => $email));
-        return $query->row_array();
+        $query1 = $this->db->get_where('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
+        $result1=$query1->row_array();
+        $id=$result1['id'];
+        $query2=$this->db->get_where('users_details', array('user' => $id));
+        $result2=$query2->row_array();
+        $result=array_merge($result1, $result2);
+        return $result;
     }
 
     public function update($name, $lastname, $email, $newEmail, $newDescription, $newContacts, $newRole){
@@ -62,10 +75,12 @@ class People_model extends CI_Model {
         if (isset($newRole)) {
             $data['role']=$newRole;
         }
-        $this->db->where('name', $name);
-        $this->db->where('lastname', $lastname);
-        $this->db->where('email', $email);
-        $this->db->update('people', $data);
+        $query1 = $this->db->get_where('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
+        $result1=$query1->row_array();
+        $id=$result1['id'];
+
+        $this->db->where('user', $id);
+        $this->db->update('users_details', $data);
         return true;
     }
 
@@ -73,7 +88,12 @@ class People_model extends CI_Model {
         if (!isset($name) || !isset($lastname) || !isset($email)) {
             return false;
         }
-        $this->db->delete('people', array('name' => $name, 'lastname' => $lastname, 'email' => $email));
+        $query1 = $this->db->get_where('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
+        $result1=$query1->row_array();
+        $id=$result1['id'];
+
+        $this->db->delete('users_details', array('user' => $id));
+        $this->db->delete('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
         return true;
     }
 }
