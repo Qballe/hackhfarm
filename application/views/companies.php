@@ -20,7 +20,9 @@
                         </p>
                       
                         <span class="team_members">06</span> <span class='location'>001</span>
+                        <a href="users/<?php echo $company["id"]; ?>"></a>
                     </div>
+
                 </li>
                 <?php } ?>
             </ul>
