@@ -6,7 +6,7 @@
  * Time: 14.32
  */
 
-class People extends CI_Controller {
+class Users extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Users_model');
@@ -26,8 +26,8 @@ class People extends CI_Controller {
 
     }
 
-    public function showDetails($id) {
-        $user=$this->Users_modelgetById($id);
+    public function details($id) {
+        $user=$this->Users_model->getById($id);
         $this->load->view('users_details', $user);
     }
 }
