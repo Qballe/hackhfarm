@@ -18,7 +18,7 @@ class Notifications_model extends CI_Model {
   }
 
   public function to_read($user_id){
-    $query = $this->db->get_where('notifications', array('user_id' => $user_id, 'read' => 0));
+    $query = $this->db->get_where('notifications', array('user_id' => $user_id, 'readed' => 0));
 
     return $query->row_array();
   }
@@ -34,7 +34,7 @@ class Notifications_model extends CI_Model {
   }
 
   public function read($notification_id){
-    $data = array('read' => 1);
+    $data = array('readed' => 1);
     $this->db->where('id', $notification_id);
     return $this->db->update('notifications', $data);
   }

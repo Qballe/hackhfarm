@@ -6,7 +6,7 @@
  * Time: 14.32
  */
 
-class Users extends CI_Controller {
+class People extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Users_model');

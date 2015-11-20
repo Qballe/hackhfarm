@@ -9,7 +9,7 @@ class Search extends CI_Controller {
 	}
 
 	public function drink($user1, $user2) {
-		$this->general_model->checkLogin();
+		//$this->general_model->checkLogin();
 
 		if ($this->coffees_model->register($user1, $user2)) {
 			$this->notifications_model->push($user1, 'coffee', 'Coffee with: '.$user2);
