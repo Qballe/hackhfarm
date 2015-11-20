@@ -21,21 +21,20 @@ class Install extends CI_Controller {
 
 		if($password && $password=="waaay") {
 			$c = 9;
+
 			foreach($emails as $vanity => $email) {
-				$extend=array();
+				$extend = array();
 
 				list($first_name, $last_name) = explode('.', $vanity);
 
 				$extend['first_name'] = ucfirst($first_name);
 				$extend['last_name'] = ucfirst($last_name);
 
-				if (!$this->ion_auth->email_check($email))
-				{
-					$uid=$this->ion_auth->register($vanity, $password, $email,$extend,
+				if (!$this->ion_auth->email_check($email)) {
+					$uid = $this->ion_auth->register($vanity, $password, $email,$extend,
 																					array(
 																						'5172eae4246a523f1900034b'
 																						));
-					$this->mongo_db->where(array('username'=>$vanity))->set('user_id',$c)->update('users');
 					$c--;
 				}
 			}
