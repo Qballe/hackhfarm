@@ -18,7 +18,7 @@ class Search_model extends CI_Model {
     return $query->result_array();
 	}
 
-	public function by_person($terms){
+	public function by_user($terms){
     $this->db->select('people.*');
     //$this->db->select('companies.name AS company_name, companies.id AS company_id');
     $this->db->from('people');
@@ -44,7 +44,7 @@ class Search_model extends CI_Model {
 	public function all($terms){
 		return [
 			'companies' => $this->by_company($terms),
-			'people' => $this->by_person($terms),
+			'people' => $this->by_user($terms),
 			'skills' => $this->by_skill($terms),
 		];
 	}
