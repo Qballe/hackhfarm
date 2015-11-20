@@ -20,6 +20,16 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		//$this->load->view('home_page');
+                //$data['title'] = ucfirst($page); // Capitalize the first letter
+                $data['first_button_text'] = "Companies";
+                $data['second_button_text'] = "People";
+                $data['title'] = "Home Page";
+                $this->load->view('templates/topbar');
+                $this->load->view('templates/header',$data);
+                $this->load->view('home_page');
+                $this->load->view('templates/footer',$data);
+                
+                
 	}
 }
