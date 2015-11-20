@@ -51,7 +51,7 @@ class Users_model extends CI_Model {
         $result=array();
         foreach ($result1 as $row)
         {
-            $id=$row['id'];
+            $id=$row->id;
             $query2=$this->db->get_where('users_details', array('user' => $id));
             $result2=$query2->row_array();
             array_push($result, array_merge($row, $result2) );
