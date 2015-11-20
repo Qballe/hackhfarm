@@ -45,16 +45,17 @@ class Users_model extends CI_Model {
         return true;
     }
 
-    public function read($name, $lastname, $email) {
-        if (!isset($name) || !isset($lastname) || !isset($email)) {
-            return false;
+    public function read() {
+        $query1 = $this->db->get('users');
+        $result1=$query1->result();
+        $result=array();
+        foreach ($result1 as $row)
+        {
+            $id=$row['id'];
+            $query2=$this->db->get_where('users_details', array('user' => $id));
+            $result2=$query2->row_array();
+            array_push($result, array_merge($row, $result2) );
         }
-        $query1 = $this->db->get_where('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
-        $result1=$query1->row_array();
-        $id=$result1['id'];
-        $query2=$this->db->get_where('users_details', array('user' => $id));
-        $result2=$query2->row_array();
-        $result=array_merge($result1, $result2);
         return $result;
     }
 
@@ -95,5 +96,18 @@ class Users_model extends CI_Model {
         $this->db->delete('users_details', array('user' => $id));
         $this->db->delete('users', array('first_name' => $name, 'last_name' => $lastname, 'email' => $email));
         return true;
+    }
+
+    public function getById($id) {
+        if (!isset($id)) {
+            return false;
+        }
+        $query1 = $this->db->get_where('users', array('id' => $id));
+        $result1=$query1->row_array();
+
+        $query2=$this->db->get_where('users_details', array('user' => $id));
+        $result2=$query2->row_array();
+
+        return array_merge($result1, $result2);
     }
 }
