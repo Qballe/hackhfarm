@@ -20,7 +20,9 @@
                         <span class="team_members">06</span> <span class='location'>001</span>
                          <span class='contacts'><?php echo $user['contacts']; ?>  </span>  <br />
                          <span class='email'> <?php echo $user['email']; ?>  </span>
+                         <a href="#" class="coffee_link"><img src="resources/img/icons/coffee.png" class="pull-right" width="10%"></a>
                     </div>
+                    
                 </li>
                 <?php } ?>
             </ul>
